@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de pessoas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header><p class="eyebrow">CADASTRO SIMPLES</p><h1>Pessoas</h1><p>Gerencie os dados e consulte a idade calculada.</p></header>
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Nova pessoa</h2>
+      <form id="form-pessoa">
+        <label>CPF <input name="cpf" inputmode="numeric" maxlength="11" placeholder="Somente números" required></label>
+        <label>Nome completo <input name="nome" maxlength="100" placeholder="Ex.: Ana Silva" required></label>
+        <label>Data de nascimento <input name="nascimento" type="date" required></label>
+        <div class="actions"><button type="submit" id="salvar">Adicionar pessoa</button><button type="button" id="cancelar" class="secondary hidden">Cancelar edição</button></div>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="card" aria-labelledby="list-title">
+      <div class="list-heading"><div><h2 id="list-title">Pessoas cadastradas</h2><p id="contador">Nenhuma pessoa cadastrada</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>CPF</th><th>Nome</th><th>Nascimento</th><th>Idade</th><th>Ações</th></tr></thead><tbody id="lista"></tbody></table></div>
+      <p id="vazio" class="empty">Sua lista aparecerá aqui após o primeiro cadastro.</p>
+    </section>
+    <footer>Os dados ficam salvos neste navegador.</footer>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
